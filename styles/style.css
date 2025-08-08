@@ -29,14 +29,16 @@
   margin-block-start: 100px;
   margin-block-end: 100px;
   margin-inline: auto;
-  width: 700px;
-  height: 368px;
+  width: min(100%, 700px);
+  min-height: 327px;
+  max-height: 368px;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: var(--accent-font), fantasy, sans-serif;
+  padding: clamp(20px, 5vw, 136px) 20px clamp(20px, 2vw, 20px);
 }
 
 .header__title {
@@ -125,8 +127,6 @@
   padding-block-start: 27px;
   mix-blend-mode: hard-light;
   color: var(--accent-color);
-  -webkit-text-stroke-width: 1;
-  -webkit-text-stroke-color: #fff;
   text-shadow: 0px 0px 5px black;
   opacity: 0.5;
 }
@@ -241,13 +241,22 @@
   outline: 2px solid var(--accent-color);
 }
 
-.dialog__button {
+.save__button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 8px;
-  margin-block-start: 54px;
+  align-self: center;
   margin-block-end: 100px;
-  margin-inline: auto;
-  width: 335px;
-  padding-block: 15px;
+  padding: var(--button-save-padding, 15px 20px);
+  background-color: #fff;
+  color: #fff;
+}
+
+.save__button .floppy {
+  --floppy-size: 28px;
+  mix-blend-mode: difference;
 }
 
 .floppy {
@@ -264,6 +273,7 @@
 }
 
 .modal-window {
+  padding: var(--dialog-padding, 30px 40px);
   background-color: var(--background-color);
   border: none;
   outline: 2px solid var(--accent-color);
@@ -272,7 +282,6 @@
   text-transform: uppercase;
   font-size: 14px;
   line-height: 21px;
-  padding: 0px;
 }
 
 .modal-window_button {
@@ -307,44 +316,22 @@
   max-width: 200px;
 }
 
-@media (width <= 375px) {
-  .header {
-    width: 100%;
-    padding-block-start: 120px;
+@media (width >= 480px) {
+  .img__label {
+    --label-right: 25px;
   }
 
-  .main-content {
-    width: 100vw;
+  .save__button .floppy {
+    --floppy-size: 21px;
   }
 
-  .card_title {
-    display: block;
-    max-width: 316px;
+  .save__button {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .img__container {
-    height: 375px;
-    width: 371px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card__img {
-    width: 371px;
-    height: 371px;
-    object-fit: cover;
-  }
-
-  .dialog__button {
-    flex-direction: column;
-    width: 306px;
-  }
-
-  .floppy {
-    width: 28px;
-  }
-
-  .modal-window_button {
-    width: 257px;
+  .dialog {
+    --dialog-padding: 30px;
   }
 }
+
