@@ -39,10 +39,16 @@
 }
 
 .floppy {
-  width: var(--floppy-size, 39px);
-  height: var(--floppy-size, 39px);
+  display: inline-block;
+  fill: currentColor;
+  width: 39px;
+  height: 39px;
+  overflow: visible;
 }
 
+svg.icon {
+  overflow: visible !important;
+}
 .heart-icon {
   width: 39px;
   height: 36px;
