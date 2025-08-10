@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   color: var(--text-color, #000);
-  font-family: var(--main-font, "Inter"), sans-serif;
+  font-family: var(--main-font, "Inter"), Arial, sans-serif;
   font-size: var(--main-font-size, 18px);
   background-color: var(--background-color, #fff);
   background-image: var(
@@ -67,7 +67,7 @@ svg.icon {
   margin: var(--header-margin);
   border: var(--border, 2px solid #000);
   padding: var(--header-padding);
-  font-family: var(--accent-font, "PressStart2P");
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   text-transform: var(--accent-heading-transform, uppercase);
   background-color: var(--background-color, #fff);
 }
@@ -113,6 +113,7 @@ svg.icon {
   border: var(--border, 2px solid #000);
   border-block-end: none;
   padding: var(--card-title-padding, 4px 10px 6px);
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   font-size: var(--card-title-size, 18px);
   font-variation-settings: "wght" var(--heading-wght, 700);
 }
@@ -130,7 +131,7 @@ svg.icon {
   z-index: 1;
   opacity: 0.5;
   color: var(--text-color, #000);
-  font-family: var(--accent-font, "PressStart2P");
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   font-size: var(--label-font-size, 14px);
   line-height: 1;
   text-shadow: var(
@@ -180,6 +181,8 @@ svg.icon {
   display: flex;
   flex-direction: column;
   gap: 27px;
+  font-family: var(--main-font, "Inter-Variable"), system-ui, -apple-system,
+    Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.17;
 }
 
@@ -198,7 +201,7 @@ svg.icon {
   margin: 0;
   padding: 0;
   color: var(--invert-color, #fff);
-  font-family: var(--accent-font, "PressStart2P");
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   font-size: var(--button-font-size, 14px);
   line-height: 0.9;
   mix-blend-mode: difference;
@@ -251,18 +254,30 @@ svg.icon {
 .save__button {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   align-self: center;
   margin-block-end: 100px;
+  width: 335px;
+  height: 55px;
   padding: var(--button-save-padding, 15px 20px);
   background-color: #fff;
   color: #fff;
+  font-family: "Press Start 2P", "Courier New", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 90%;
+  letter-spacing: 0;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .save__button .floppy {
-  --floppy-size: 28px;
+  --floppy-size: 21px;
+  width: 21px;
+  height: 21px;
   mix-blend-mode: difference;
 }
 
@@ -272,8 +287,8 @@ svg.icon {
   display: flex;
   flex-direction: column;
   border: var(--border, 2px solid #000);
-  padding: var(--dialog-padding, 30px 40px);
-  font-family: var(--accent-font, "PressStart2P");
+  padding: 30px 40px;
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   transition: opacity 0.3s ease-in-out;
   max-inline-size: clamp(286px, calc(100vw - 34px), 353px);
 }
@@ -356,7 +371,6 @@ dialog::backdrop {
   transition-delay: 0.05s;
 }
 
-/* Active */
 .card__icon-button:active .core {
   fill: var(--animation-fill-color, #ff0000);
   transition-delay: 0s;
@@ -427,9 +441,28 @@ dialog::backdrop {
   .save__button {
     flex-direction: row;
     justify-content: center;
+    width: 335px;
+    height: 55px;
   }
 
-  .dialog {
-    --dialog-padding: 30px;
+  .dialog-save {
+    padding: 30px 30px;
+  }
+}
+
+@media (max-width: 479px) {
+  .save__button {
+    width: 306px;
+    height: 84px;
+    font-size: 14px;
+    line-height: 90%;
+    letter-spacing: 0;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+
+  .save__button .floppy {
+    width: 28px;
+    height: 28px;
   }
 }
