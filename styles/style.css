@@ -47,7 +47,7 @@
 }
 
 svg.icon {
-  overflow: visible !important;
+  overflow: visible;
 }
 .heart-icon {
   width: 39px;
@@ -114,8 +114,12 @@ svg.icon {
   border-block-end: none;
   padding: var(--card-title-padding, 4px 10px 6px);
   font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
-  font-size: var(--card-title-size, 18px);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
   font-variation-settings: "wght" var(--heading-wght, 700);
+  line-height: 1;
+  text-transform: none;
 }
 
 .card__illustration {
@@ -287,10 +291,11 @@ svg.icon {
   display: flex;
   flex-direction: column;
   border: var(--border, 2px solid #000);
-  padding: 30px 40px;
+  padding: 30px;
   font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   transition: opacity 0.3s ease-in-out;
   max-inline-size: clamp(286px, calc(100vw - 34px), 353px);
+  overflow: hidden;
 }
 
 .dialog-save[open] {
@@ -324,7 +329,10 @@ svg.icon {
   position: relative;
   display: flex;
   align-self: center;
-  padding: var(--button-ok-padding, 10.5px 112.5px);
+  justify-content: center;
+  align-items: center;
+  width: 293px;
+  padding: 10.5px 30px;
   text-transform: var(--accent-heading-transform, uppercase);
 }
 
@@ -444,10 +452,6 @@ dialog::backdrop {
     width: 335px;
     height: 55px;
   }
-
-  .dialog-save {
-    padding: 30px 30px;
-  }
 }
 
 @media (max-width: 479px) {
@@ -464,5 +468,14 @@ dialog::backdrop {
   .save__button .floppy {
     width: 28px;
     height: 28px;
+  }
+
+  .dialog__button-ok {
+    width: 261px;
+    padding: 10.5px 40px;
+  }
+
+  .dialog-save {
+    padding: 30px 40px;
   }
 }
