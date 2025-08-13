@@ -113,8 +113,8 @@ svg.icon {
   border: var(--border, 2px solid #000);
   border-block-end: none;
   padding: var(--card-title-padding, 4px 10px 6px);
-  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
-  font-size: 14px;
+  font-family: var(--main-font, "Inter-Variable"), system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wght" var(--heading-wght, 700);
@@ -268,7 +268,7 @@ svg.icon {
   padding: var(--button-save-padding, 15px 20px);
   background-color: #fff;
   color: #fff;
-  font-family: "Press Start 2P", "Courier New", monospace;
+  font-family: var(--accent-font, "PressStart2P"), "Courier New", monospace;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
